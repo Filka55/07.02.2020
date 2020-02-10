@@ -1,129 +1,131 @@
-//Task2
-// for (var i = 0; i < 10; i++) {
-// 	if(i % 2 == 0) {
-//     console.log(i*i);
-//   }
-// }
+// Task 1
+/*Создайте объект person, описывающий персону, с произвольным количеством
+произвольных полей. С помощью оператора in или typeof проверьте наличие в
+объекте свойства, прочитанного из prompt, и выведите его на экран. Если
+свойства нет, то добавляйте его в объект со значением, которое также запрашивается из prompt.*/
 
-//Task3
-// var k = '.';
-// for (var i = 1; i = 10; i++) {
-// 	if(i % 2 == 1) {
-//     k = k + '#';
-//   }
-// 	else{
-// 		k = k + '.';
-// 	}
-// }
-// document.write(k);
+let persone = {};
 
-//Task4
-// var conf = false;
-// while (conf == false){
-// 	conf = confirm();
-// }
-
-
-//Task5
-// var k = 1;
-// for(var i = Math.random(); i < 0.99; ) {
-//   k = k + 1;
-//   i = Math.random();
-// }
-// alert ('количество операций' + k + 'число, прервавшее цикл' + i);
-
-//Task6
-// var width = +prompt('Количество символов в строке');
-// var height = +prompt('Высота строки');
-// var picture = '';
-// for (var i = 1; i != height; i++) {
-//   for( var k = 0; k != width; k++){
-//     if(k % 2  == 0){
-//       picture = picture + '#';
-//     }
-//     else{
-//       picture = picture + '.';
-//     }
-//   }
-//   picture = picture + `\n`;
-//   for( var j = 0; j != width; j++){
-//     if(j % 2  == 0){
-//       picture = picture + '.';
-//     }
-//     else{
-//       picture = picture + '#';
-//     }
-//   }
-//   picture = picture + `\n`;
-// }
-// alert(picture);
-
-
-//Task7
-// var i = 0;
-// var k = 1;
-// var m = 0;
-// for (;;) {
-//   console.log(i);
-//   m = i;
-// 	i = i + k;
-//   k = m;
-// 	if (i >1000) break;
-// }
-
-//Task8
-// var k = 0;
-// var i = 0;
-// for (;;i++){
-//   k = +prompt();
-//   if(k == false) break;
-//   m = k + k;
-// }
-// alert('Количество введеных чисел ' + i  + '\n'+ 'Сумма введеных чисел '+ m + '\n' + 'Среднее арифметическое введеных чисел ' + '\n' + m/i);
-
-//Task9
-// for (let i = 0; i < 10; i++) {
-// 	for (let j = 0; j < 10; j++) { //i изменено на j
-//     console.log(i + j);
-//     	}
-//     }
-
-//Task10
-// $("#root table").css({"width":"80%","margin":"0 auto", "border-collapse":"collapse"});
-// $("#root td").css({"width":"10px", "height":"10px", "background-color":"#eee", "border":"1px solid #000"});
-// $("#root tr").slice(0,6).addClass("bgc1_6");
-// $("tr.bgc1_6 td").css("background-color","#106B63");
-// $("#root tr").slice(6,9).addClass("bgc7_9");
-// $("tr.bgc7_9 td").css("background-color","#E7C610");
-//
-// $("#root tr").slice(9,12).addClass("bgc10_12");
-// $("tr.bgc10_12 td").css("background-color","#C64A08");
-//
-// $("#root tr").slice(12,15).addClass("bgc13_15");
-// $("tr.bgc13_15 td").css("background-color","#B43100");
-//
-// $("#root tr").slice(15,19).addClass("bgc16_19");
-// $("tr.bgc16_19 td").css("background-color","#102173");
-//
-// $("td.none").css({"background-color":"none", "border":"none"});
-
-//Task11
-var width = 11;
-var picture = '';
-for (var i = 1; i <= width; i = i + 2) {
-
-  var m = i;
-  for(var k = (11-m); k > ((11-m)/2); k--){
-    picture = picture + '.';
-  }
-  for(var j = 1; j <= i; j++){
-    picture = picture + '#';
-  }
-  for(var k = (11-m); k > ((11-m)/2); k--){
-    picture = picture + '.';
-  }
-  picture = picture + `\n`;
+while (true){
+let characteristic = prompt('Сharacteristic', '');
+if (characteristic === null){
+  break;
+}
+let value = prompt('Value', '');
+  persone[characteristic] = value;
 
 }
 
-console.log(picture);
+if (persone.lastname == undefined){
+  persone['lastname'] = ' meaning had not been defined';
+}
+
+//Task2
+/*Сгенерируйте объект, описывающий модель телефона, заполнив все свойства
+значениями, прочитанными из prompt (например: brand, model, resolution, color...),
+не используя вспомогательные переменные. Добавьте этот гаджет персоне, созданной ранее. */
+
+var phone = {
+  brand: 'Meizu',
+  model: 'M6',
+  resolution: '5.5',
+  color: 'gold',
+}
+  persone['phone'] = phone;
+
+//Task3
+/*Запустите бесконечный цикл. В цикле вызывайте prompt,
+в котором пишется либо delete, либо update. В зависимости
+от указанного действия, удаляйте или добавляйте (редактируйте)
+свойство в объекте персоны (которая уже имеет телефон).
+Какое именно свойство удалять или добавлять - также читается
+из prompt. Какое значение будет у добавленного свойства - тоже
+берется из prompt. При нажатии на Отмена при появлении prompt
+редактирование person заканчивается. И обновленные данные распечатываются
+в консоли.*/
+while (true){
+let characteristic = prompt('Сharacteristic for adding', '');
+if (characteristic === null){
+  break;
+}
+let value = prompt('Value', '');
+  persone[characteristic] = value;
+
+}
+JSON.stringify(persone);
+while (true){
+
+  let characteristicDelete = prompt('Сharacteristic for deleting', '');
+
+  if (characteristicDelete === null){
+    break;
+  }
+
+for(var key in persone)
+    if (key == characteristicDelete){
+   delete persone[characteristicDelete];
+   }
+  }
+
+
+  console.log(persone);
+
+// Task4
+let container = document.querySelector('.container');
+let dl = document.createElement('dl');
+container.appendChild(dl);
+
+for(let key in persone){
+
+    let dt = document.createElement('dt');
+    dt.innerText = key;
+
+    let dd = document.createElement('dd');
+    dd.innerText = persone[key];
+
+    dl.appendChild(dt);
+    dl.appendChild(dd);
+
+  }
+
+
+
+//Task5
+/*Создайте объект dates для хранения дат. Первая дата – позавчера.
+Вторая дата – текущая дата (new Date) минус 365 дней.
+Из prompt читается дата в формате yyyy-MM-dd. Проверьте,
+попадает ли введенная дата в диапазон дат объекта dates.*/
+//
+// let test = new Date(prompt('Enter a date YYYY-MM-DD'));
+// let today = new Date();
+// let dates = {
+//   yesterday: (today - 86400000),
+//   lastYear: (today - 86400000*365),
+// }
+// let yesterday = dates['yesterday'];
+// let lastYear = dates['lastYear'];
+// if (test<yesterday && test>lastYear){
+//   console.log(test);
+// };
+
+
+
+
+//Task6
+/*Создайте структуру данных, полностью описывающую html-разметку картинки.
+С помощью методов браузера добавьте ее на страницу со всеми атрибутами,
+читая значения свойств из созданного объекта.*/
+
+// let image = document.createElement('img');
+// let container = document.querySelector('.container');
+// container.appendChild(image);
+//
+// var src = "https://www.google.com.ua/logos/doodles/2017/bella-akhmadulinas-80th-birthday-5134676388741120.3-law.gif"
+// var alt = "";
+// var style = "border: 1px solid #ccc";
+// var width = 200;
+//
+// image.setAttribute('src', src);
+// image.setAttribute('alt', alt);
+// image.setAttribute('style', style);
+// image.setAttribute('width', width);

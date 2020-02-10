@@ -1,0 +1,7 @@
+dl dt{
+  float: left;
+  font-weight: bold;
+}
+dl dt::after{
+  content: ':';
+}
